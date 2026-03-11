@@ -18,3 +18,11 @@ execute:
 #| label: reading in packages/data
 
 ```
+
+# Problem 1: Research writing
+
+## a. Transparent statistical methods
+
+In part 1, they used a simple linear regression test, because they were testing whether one continuous predictor variable, precipitation, predicts another continuous variable, flooded wetland area.\
+\
+In part 2, they used a Kruskal–Wallis test, because they were comparing the median flooded wetland area across more than two groups: wet, above normal, below normal, dry, and critical drought. Differences in median can best be measured by nonparametric test, which in this case is Kruskal-Wallis test instead of ANOVA test.
