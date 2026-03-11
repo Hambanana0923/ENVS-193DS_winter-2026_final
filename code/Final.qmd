@@ -12,7 +12,9 @@ execute:
 
 [GitHub Repo](https://github.com/Hambanana0923/ENVS-193DS_winter-2026_final)
 
-Questions for An: Problem 1, part c
+Questions for An: Problem 1, part c (Do I have to rewrite both, and if the texts are right way)
+
+Problem 2, part c (legend position)
 
 # Set Up
 
@@ -22,6 +24,7 @@ Questions for An: Problem 1, part c
 library(tidyverse) # read in tidyverse package
 library(janitor) # read in janitor package
 library(here) # read in here package
+library(showtext) # read in showtext package
 
 kelp <- read_csv(here("data", "kelp.csv")) # save giant kelp frond data in new object called kelp
 ```
@@ -86,3 +89,42 @@ str(kelp_clean) # display structure of kelp_clean
 ## b. Understanding the data
 
 That observation was filtered out because the notes on the dataset table csv itself says there was a missing data sheet for 2000-09-22, transect 6 (a fixed 40 m sampling line in the kelp forest), quad 40 (one specific smaller sampling section within that transect where kelp were counted), so the fronds value there is -99999. That value does not represent a real number of fronds; it is an NA/missing-data code used when data were not collected or the datasheet was lost, as described in the Santa Barbara Coastal LTER data, Methods and Protocols section.
+
+## c. Visualize the data
+
+```{r}
+#| label: mean kelp size vs sites
+
+font_add_google("lato") # downloads/imports the Google font "Lato" 
+showtext_auto() # render text in plots using showtext, so the custom font appears correctly
+
+# ggplot base layer call
+ggplot(data = kelp_clean, # select kelp_clean data frame
+       aes(x = year, # use year column as x-axis
+           y = mean_fronds, # use mean_fronds column as y-axis
+           color = site_name)) + # color based on sites 
+  geom_point() + # first layer: points
+  geom_line() + # second layer: lines connecting points
+  theme_minimal() + # choose minimal ggplot theme
+  labs( # labels
+    title = "Sites vary in mean kelp fronds per year", # label title
+    x = "Year", # label x-axis title
+    y = "Mean kelp fronds per year" # label y-axis title
+  ) +
+  scale_color_manual( # manually change colors
+    name = "Site", # label legend as Site
+    values = c(
+      "Naples" = "#2A9D9A", # assign light blue color to Naples plot
+      "Isla Vista" = "#C9A294", # assign peach color to Naples plot
+      "Carpinteria" = "#7E9190")) + # assign gray color to Naples plot
+  theme( # theme function call
+    plot.title = element_text(hjust = 0.5, size = 14), # adjust title position and size
+    panel.border = element_blank(), # eliminate plot borders
+    text = element_text(family = "lato", color = "black"), # customize text font and color
+    legend.position = "right", # change legend position
+    axis.title = element_text(size = 13), # change axis font size
+    axis.text = element_text(size = 11), # change axis text size
+    legend.title = element_text(size = 13), # change legend title font size
+    legend.text = element_text(size = 11)) # change legend text size
+
+```
