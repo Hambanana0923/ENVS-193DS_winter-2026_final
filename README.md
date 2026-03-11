@@ -9,7 +9,7 @@ This repo contains files demonstrating Pearson and Spearman's correlation test, 
 **Whose repo is it? Who is contributing to it?**  
 This is a repo I've created. I am the sole contributor.
 
-## Data and file information
+## Data and file overview
 
 **What files are there?**  
 All code files are in the `code` folder. The code for the website is in the `homework_3.qmd` file.

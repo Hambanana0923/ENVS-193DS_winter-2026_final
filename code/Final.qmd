@@ -1,0 +1,20 @@
+---
+title: "final"
+author: "Hambee Makinoda"
+date: 2026-03-04
+format:
+  html:
+    toc: true 
+execute:
+  message: false 
+  warning: false 
+---
+
+[GitHub Repo](https://github.com/Hambanana0923/ENVS-193DS_winter-2026_final)
+
+# Set Up
+
+```{r}
+#| label: reading in packages/data
+
+```
