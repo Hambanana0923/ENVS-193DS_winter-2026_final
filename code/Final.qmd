@@ -82,3 +82,7 @@ kelp_clean <- kelp |> # store kelp data in new object kelp_clean
 kelp_clean |> slice_sample(n = 5) # slice 5 samples from the kelp_clean data frame 
 str(kelp_clean) # display structure of kelp_clean
 ```
+
+## b. Understanding the data
+
+That observation was filtered out because the notes on the dataset table csv itself says there was a missing data sheet for 2000-09-22, transect 6 (a fixed 40 m sampling line in the kelp forest), quad 40 (one specific smaller sampling section within that transect where kelp were counted), so the fronds value there is -99999. That value does not represent a real number of fronds; it is an NA/missing-data code used when data were not collected or the datasheet was lost, as described in the Santa Barbara Coastal LTER data, Methods and Protocols section.
