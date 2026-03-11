@@ -23,13 +23,14 @@ execute:
 
 ## a. Transparent statistical methods
 
-In part 1, they used a simple linear regression test, because they were testing whether one continuous predictor variable, precipitation, predicts another continuous variable, flooded wetland area.\
+In part 1, they used a linear regression test, because they were testing whether one continuous predictor variable, precipitation, predicts another continuous variable, flooded wetland area.\
 \
 In part 2, they used a Kruskal–Wallis test, because they were comparing the median flooded wetland area across more than two groups: wet, above normal, below normal, dry, and critical drought. Differences in median can best be measured by nonparametric test, which in this case is Kruskal-Wallis test instead of ANOVA test.\
 \
-## b. Figure needed
-My coworker should use box and whisker plot. The x-axis should show water year classification, with the five categories: wet, above normal, below normal, dry, and critical drought. The y-axis should show flooded wetland area (m²). Additionally, my coworker should include line within the box for medians, edge of the box showing interquartile range, whiskers to show spread, and individual points beneath the boxplot to show distribution. This will visually show the readers how much flooded wetland areas between 5 water year classifications side by side, which fits well with a Kruskal–Wallis test because that test compares differences among groups without assuming normality (non-parametric).\
+## b. Figure needed My coworker should use box and whisker plot to give context to the test. The x-axis should show water year classification, with the five categories: wet, above normal, below normal, dry, and critical drought. The y-axis should show flooded wetland area (m²). Additionally, my coworker should include line within the box for medians, edge of the box showing interquartile range, whiskers to show spread, and individual points beneath the boxplot to show distribution. This will visually show the readers how much flooded wetland areas between 5 water year classifications side by side, which fits well with a Kruskal–Wallis test because that test compares differences among groups without assuming normality (non-parametric).\
 \
-
-
-  
+## c. Suggestions for rewriting Part 1: Precipitation was not a significant predictor of flooded wetland area in the San Joaquin River Delta. (linear regression, F(df for whole model) = F statistic for full model , R^2^ = coefficient of determination for model, p = 0.11, α = significance level).\
+\
+Part 2: Median flooded wetland area did not differ significantly among the five water year classifications- wet, above normal, below normal, dry, and critical drought. (Kruskal–Wallis test, χ^2^(df) = test statistic, p = 0.12, α = significance level).\
+\
+## d. Interpretation
