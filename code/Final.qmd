@@ -128,3 +128,9 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
     legend.text = element_text(size = 11)) # change legend text size
 
 ```
+
+## d. Interpretation
+
+**Isla Vista** had the most variable mean kelp fronds per year because its line and points shows the largest fluctuations over time, ranging from around 5 to 40 fronds per year. The steep rises and drops in the Isla Vista series indicate much greater year-to-year variation than the other 2 sites.
+
+**Carpinteria** had the least variable mean kelp fronds per year because its line stays relatively flatter and with a narrower range of y-values than other 2 sites, consistently around 3 to 13 fronds per year with 1 outlier point. Carpinteria shows smaller changes from year to year, with only 1 year that extends beyond 15 fronds compared to other 2 sites with multiple years over 15 fronds per year.
