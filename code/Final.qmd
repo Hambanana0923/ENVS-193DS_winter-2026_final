@@ -14,8 +14,6 @@ execute:
 
 Questions for An: Problem 1, part c (Do I have to rewrite both, and if the texts are right way)
 
-Problem 2, part c (legend position)
-
 # Set Up
 
 ```{r}
@@ -27,6 +25,7 @@ library(here) # read in here package
 library(showtext) # read in showtext package
 
 kelp <- read_csv(here("data", "kelp.csv")) # save giant kelp frond data in new object called kelp
+molp <- read_csv(here("data", "mopl_2019.csv")) # store Mountain Plover data in new object molp
 ```
 
 # Problem 1. Research writing
@@ -41,7 +40,7 @@ In part 2, they used a Kruskal–Wallis test, because they were comparing the me
 
 My coworker should use box and whisker plot to give context to the test. The x-axis should show water year classification, with the five categories: wet, above normal, below normal, dry, and critical drought. The y-axis should show flooded wetland area (m²). Additionally, my coworker should include line within the box for medians, edge of the box showing interquartile range, whiskers to show spread, and individual points beneath the boxplot to show distribution. This will visually show the readers how much flooded wetland areas between 5 water year classifications side by side, which fits well with a Kruskal–Wallis test because that test compares differences among groups without assuming normality (non-parametric).\
 
-## c. Suggestions for rewriting 
+## c. Suggestions for rewriting
 
 Part 1: Precipitation was not a significant predictor of flooded wetland area in the San Joaquin River Delta. (linear regression, F(df for whole model) = F statistic for full model , R^2^ = coefficient of determination for model, p = 0.11, α = significance level).\
 \
@@ -55,7 +54,7 @@ One additional variable that could influence flooded wetland area is soil type, 
 
 Reed, D, R. Miller. 2025. SBC LTER: Reef: Kelp Forest Community Dynamics: Abundance and size of Giant Kelp (Macrocystis Pyrifera), ongoing since 2000 ver 30. Environmental Data Initiative. <https://doi.org/10.6073/pasta/c05388280c63f9effa0c71bf5908be1e>. Accessed 2026-03-11.
 
-## a. Cleaning and summarizing 
+## a. Cleaning and summarizing
 
 ```{r}
 #| label: cleaning and summarizing
@@ -121,7 +120,6 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
     plot.title = element_text(hjust = 0.5, size = 14), # adjust title position and size
     panel.border = element_blank(), # eliminate plot borders
     text = element_text(family = "lato", color = "black"), # customize text font and color
-    legend.position = "right", # change legend position
     axis.title = element_text(size = 13), # change axis font size
     axis.text = element_text(size = 11), # change axis text size
     legend.title = element_text(size = 13), # change legend title font size
@@ -134,3 +132,15 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
 **Isla Vista** had the most variable mean kelp fronds per year because its line and points shows the largest fluctuations over time, ranging from around 5 to 40 fronds per year. The steep rises and drops in the Isla Vista series indicate much greater year-to-year variation than the other 2 sites.
 
 **Carpinteria** had the least variable mean kelp fronds per year because its line stays relatively flatter and with a narrower range of y-values than other 2 sites, consistently around 3 to 13 fronds per year with 1 outlier point. Carpinteria shows smaller changes from year to year, with only 1 year that extends beyond 15 fronds compared to other 2 sites with multiple years over 15 fronds per year.
+
+# Problem 3. Data Analysis
+
+## a. Response variable
+
+In this study, 1 represents a site that was used as a Mountain Plover nest site, and 0 represents an unused available site within a prairie dog colony. The Methods states that the nest-site selection analysis used a “use vs. non-use framework,” where used sites were actual nests and unused sites were randomly selected points within colonies where no plovers or nests were detected that year.
+
+## b. Purpose of study
+
+**Visual obstruction:** Visual obstruction is a continuous variable, measured with Robel pole readings at the nest and nearby points, so it represents how much vegetation height and density block visibility. As visual obstruction increases, the probability of Mountain Plover nest site use would likely decrease because the paper describes plovers selects nest sites with low vegetation height. Relation of low vegetation height and Mountain Plover nesting was described in Introduction, paragraph 2, and I found how and what value was measured for visual obstruction in the Methods section, Nest-Site Selection, paragraph 2 where visual collection measurements were described.
+
+**Distance to prairie dog colony edge**: Distance to prairie dog colony edge is also a continuous variable, because it measures how far a site is from the edge of a prairie dog colony. As distance from the prairie dog colony edge increases, the probability of Mountain Plover nesting would likely decrease because the prairie dog activity creates short vegetation and open ground that Mountain Plovers favor. The relation between Mountain Plover and prairie dogs is described in Abstract, and the variable is described in Methods, Nest-Site Selection, Table 1, where one of the predictor variable is described as "Distance to colony edge".
