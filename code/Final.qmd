@@ -193,3 +193,14 @@ model3 <- glm( # generalized linear model
   family = "binomial" # binomial response variable
 )
 ```
+
+## e. Select the best model
+
+```{r}
+#| label: aic
+
+AIC(model0, model1, model2, model3) #Akaike's Informatio Criterion code for all models 
+
+```
+
+The best model as determined by Akaike's Information Criterion (AIC) included visual obstruction at the nest (vo_nest) as a predictor variable of Mountain Plover nest site use (used\_\_bin).
