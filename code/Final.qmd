@@ -1,5 +1,5 @@
 ---
-title: "final"
+title: "Final"
 author: "Hambee Makinoda"
 date: 2026-03-04
 format:
@@ -23,6 +23,9 @@ library(tidyverse) # read in tidyverse package
 library(janitor) # read in janitor package
 library(here) # read in here package
 library(showtext) # read in showtext package
+library(DHARMa) # read in DHARMa package
+library(MuMIn) # read in MuMIn package
+library(ggeffects) # read in ggeffects package
 
 kelp <- read_csv(here("data", "kelp.csv")) # save giant kelp frond data in new object called kelp
 mopl <- read_csv(here("data", "mopl_2019.csv")) # store Mountain Plover data in new object molp
@@ -104,7 +107,6 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
            color = site_name)) + # color based on sites 
   geom_point() + # first layer: points
   geom_line() + # second layer: lines connecting points
-  theme_minimal() + # choose minimal ggplot theme
   labs( # labels
     title = "Sites vary in mean kelp fronds per year", # label title
     x = "Year", # label x-axis title
@@ -116,6 +118,7 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
       "Naples" = "#2A9D9A", # assign light blue color to Naples plot
       "Isla Vista" = "#C9A294", # assign peach color to Naples plot
       "Carpinteria" = "#7E9190")) + # assign gray color to Naples plot
+  theme_minimal() +# choose minimal ggplot theme
   theme( # theme function call
     plot.title = element_text(hjust = 0.5, size = 14), # adjust title position and size
     panel.border = element_blank(), # eliminate plot borders
@@ -123,7 +126,11 @@ ggplot(data = kelp_clean, # select kelp_clean data frame
     axis.title = element_text(size = 13), # change axis font size
     axis.text = element_text(size = 11), # change axis text size
     legend.title = element_text(size = 13), # change legend title font size
-    legend.text = element_text(size = 11)) # change legend text size
+    legend.text = element_text(size = 11), # change legend text size  
+    panel.grid.major.y = element_line(color = "gray90"), # change gridline colors
+    panel.grid.minor.y = element_line(color = "gray90"), # change gridline colors
+    panel.grid.major.x = element_line(color = "gray90"), # change gridline colors
+    panel.grid.minor.x = element_line(color = "gray90")) # change gridline colors
 
 ```
 
@@ -148,7 +155,7 @@ In this study, 1 represents a site that was used as a Mountain Plover nest site,
 ## c. Table of models
 
 | Model number | Visual Obstruction | Distance to Prairie Dog Colony | Model Description |
-|----------------|:--------------:|:--------------:|:----------------------:|
+|-----------------|:---------------:|:---------------:|:--------------------:|
 | 0 |  |  | no predictors (null model) |
 | 1 | X | X | all predictors (full model): Visual Obstruction + Distance to Prairie Dog Colony |
 | 2 | X |  | Visual Obstruction |
@@ -199,8 +206,67 @@ model3 <- glm( # generalized linear model
 ```{r}
 #| label: aic
 
-AIC(model0, model1, model2, model3) #Akaike's Informatio Criterion code for all models 
+AICc(model0, model1, model2, model3) |> #Akaike's Informatio Criterion code for all models 
+  arrange(AICc) # arrange it in a way that lowest score comes on top
 
 ```
 
 The best model as determined by Akaike's Information Criterion (AIC) included visual obstruction at the nest (vo_nest) as a predictor variable of Mountain Plover nest site use (used\_\_bin).
+
+## f. Check the diagnostics
+
+```{r}
+#| label: diagnostics
+
+sim_res <- DHARMa::simulateResiduals(fittedModel = model2) # store diagnostic data of best model determined by AIC in sim_res
+plot(sim_res) # plot the residuals
+
+```
+
+## g. Visualize the model predictions
+
+```{r}
+#| label: visualization of model prediction
+
+# create model predictions across the observed range of visual obstruction
+mod_preds <- ggpredict(
+  model2,
+  terms = "vo_nest"
+)
+
+# plot underlying data and model predictions with 95% confidence intervals
+ggplot(mopl_clean, # start with mopl_clean data frame
+       aes(x = vo_nest, # use vo_nest column as x-axis
+           y = used_bin)) + # use used_bin column as y-axis
+  # show observed data
+  geom_point( # first layer: individual observations as points 
+    size = 2.5, # change size of the points
+    alpha = 0.4, # change opacity of points
+    color = "darkorange" # change color of points to darkorange
+  ) +
+  geom_ribbon( # second layer: 95% confidence interval ribbon
+    data = mod_preds, # use mod_preds data frame
+    aes( 
+      x = x, # set x-axis
+      y = predicted, # set y-axis
+      ymin = conf.low, # lower bound of the ribbon
+      ymax = conf.high # upper bound of the ribbon
+    ),
+    alpha = 0.3, # change opacity
+    fill = "skyblue" # change color of ribbon to skyblue
+  ) +
+  geom_line( # third layer: add predicted probability line
+    data = mod_preds, # use mod_preds data frame
+    aes(x = x, # set x-axis
+        y = predicted), # set y-axis
+    linewidth = 1.2, # make line width thicker
+    color = "navy" # change color of the line to navy
+  ) +
+  scale_y_continuous(limits = c(0, 1), # make y-axis go from 0 to 1 
+                     breaks = c(0, 1)) + # put tick marks only at 0 and 1 
+  labs(
+    x = "Visual obstruction at nest (cm)", # label x-axis
+    y = "Probability of Mountain Plover nest site use" # label y-axis
+  ) +
+  theme_classic() # choose theme without gridlines
+```

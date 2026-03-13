@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Hambee Makinoda">
+<meta name="dcterms.date" content="2026-03-04">
+
+<title>Final</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Final_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Final_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Final_files/libs/quarto-html/popper.min.js"></script>
+<script src="Final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Final_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Final_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set Up</a></li>
+  <li><a href="#problem-1.-research-writing" id="toc-problem-1.-research-writing" class="nav-link" data-scroll-target="#problem-1.-research-writing">Problem 1. Research writing</a>
+  <ul class="collapse">
+  <li><a href="#a.-transparent-statistical-methods" id="toc-a.-transparent-statistical-methods" class="nav-link" data-scroll-target="#a.-transparent-statistical-methods">a. Transparent statistical methods</a></li>
+  <li><a href="#b.-figure-needed" id="toc-b.-figure-needed" class="nav-link" data-scroll-target="#b.-figure-needed">b. Figure needed</a></li>
+  <li><a href="#c.-suggestions-for-rewriting" id="toc-c.-suggestions-for-rewriting" class="nav-link" data-scroll-target="#c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</a></li>
+  <li><a href="#d.-interpretation" id="toc-d.-interpretation" class="nav-link" data-scroll-target="#d.-interpretation">d.&nbsp;Interpretation</a></li>
+  </ul></li>
+  <li><a href="#problem-2.-data-visualization" id="toc-problem-2.-data-visualization" class="nav-link" data-scroll-target="#problem-2.-data-visualization">Problem 2. Data visualization</a>
+  <ul class="collapse">
+  <li><a href="#a.-cleaning-and-summarizing" id="toc-a.-cleaning-and-summarizing" class="nav-link" data-scroll-target="#a.-cleaning-and-summarizing">a. Cleaning and summarizing</a></li>
+  <li><a href="#b.-understanding-the-data" id="toc-b.-understanding-the-data" class="nav-link" data-scroll-target="#b.-understanding-the-data">b. Understanding the data</a></li>
+  <li><a href="#c.-visualize-the-data" id="toc-c.-visualize-the-data" class="nav-link" data-scroll-target="#c.-visualize-the-data">c.&nbsp;Visualize the data</a></li>
+  <li><a href="#d.-interpretation-1" id="toc-d.-interpretation-1" class="nav-link" data-scroll-target="#d.-interpretation-1">d.&nbsp;Interpretation</a></li>
+  </ul></li>
+  <li><a href="#problem-3.-data-analysis" id="toc-problem-3.-data-analysis" class="nav-link" data-scroll-target="#problem-3.-data-analysis">Problem 3. Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#a.-response-variable" id="toc-a.-response-variable" class="nav-link" data-scroll-target="#a.-response-variable">a. Response variable</a></li>
+  <li><a href="#b.-purpose-of-study" id="toc-b.-purpose-of-study" class="nav-link" data-scroll-target="#b.-purpose-of-study">b. Purpose of study</a></li>
+  <li><a href="#c.-table-of-models" id="toc-c.-table-of-models" class="nav-link" data-scroll-target="#c.-table-of-models">c.&nbsp;Table of models</a></li>
+  <li><a href="#d.-run-the-models" id="toc-d.-run-the-models" class="nav-link" data-scroll-target="#d.-run-the-models">d.&nbsp;Run the models</a></li>
+  <li><a href="#e.-select-the-best-model" id="toc-e.-select-the-best-model" class="nav-link" data-scroll-target="#e.-select-the-best-model">e. Select the best model</a></li>
+  <li><a href="#f.-check-the-diagnostics" id="toc-f.-check-the-diagnostics" class="nav-link" data-scroll-target="#f.-check-the-diagnostics">f.&nbsp;Check the diagnostics</a></li>
+  <li><a href="#g.-visualize-the-model-predictions" id="toc-g.-visualize-the-model-predictions" class="nav-link" data-scroll-target="#g.-visualize-the-model-predictions">g. Visualize the model predictions</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Hambee Makinoda </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 4, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://github.com/Hambanana0923/ENVS-193DS_winter-2026_final">GitHub Repo</a></p>
+<p>Questions for An: Problem 1, part c (Do I have to rewrite both, and if the texts are right way)</p>
+<section id="set-up" class="level1">
+<h1>Set Up</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># read in tidyverse package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co"># read in janitor package</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here) <span class="co"># read in here package</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext) <span class="co"># read in showtext package</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DHARMa) <span class="co"># read in DHARMa package</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MuMIn) <span class="co"># read in MuMIn package</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects) <span class="co"># read in ggeffects package</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>kelp <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"kelp.csv"</span>)) <span class="co"># save giant kelp frond data in new object called kelp</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>mopl <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"mopl_2019.csv"</span>)) <span class="co"># store Mountain Plover data in new object molp</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="problem-1.-research-writing" class="level1">
+<h1>Problem 1. Research writing</h1>
+<section id="a.-transparent-statistical-methods" class="level2">
+<h2 class="anchored" data-anchor-id="a.-transparent-statistical-methods">a. Transparent statistical methods</h2>
+<p>In part 1, they used a linear regression test, because they were testing whether one continuous predictor variable, precipitation, predicts another continuous variable, flooded wetland area.<br>
+<br>
+In part 2, they used a Kruskal–Wallis test, because they were comparing the median flooded wetland area across more than two groups: wet, above normal, below normal, dry, and critical drought. Differences in median can best be measured by nonparametric test, which in this case is Kruskal-Wallis test instead of ANOVA test.<br>
+</p>
+</section>
+<section id="b.-figure-needed" class="level2">
+<h2 class="anchored" data-anchor-id="b.-figure-needed">b. Figure needed</h2>
+<p>My coworker should use box and whisker plot to give context to the test. The x-axis should show water year classification, with the five categories: wet, above normal, below normal, dry, and critical drought. The y-axis should show flooded wetland area (m²). Additionally, my coworker should include line within the box for medians, edge of the box showing interquartile range, whiskers to show spread, and individual points beneath the boxplot to show distribution. This will visually show the readers how much flooded wetland areas between 5 water year classifications side by side, which fits well with a Kruskal–Wallis test because that test compares differences among groups without assuming normality (non-parametric).<br>
+</p>
+</section>
+<section id="c.-suggestions-for-rewriting" class="level2">
+<h2 class="anchored" data-anchor-id="c.-suggestions-for-rewriting">c.&nbsp;Suggestions for rewriting</h2>
+<p>Part 1: Precipitation was not a significant predictor of flooded wetland area in the San Joaquin River Delta. This means that increase in precipitation for a year does not mean it increases flooded wetland area, and vice versa. (linear regression, F(df for whole model) = F statistic for full model , R<sup>2</sup> = coefficient of determination for model, p = 0.11, α = significance level).<br>
+<br>
+Part 2: Median flooded wetland area did not differ significantly among the five water year classifications- wet, above normal, below normal, dry, and critical drought. (Kruskal–Wallis test, χ<sup>2</sup>(df) = test statistic, p = 0.12, α = significance level).<br>
+</p>
+</section>
+<section id="d.-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="d.-interpretation">d.&nbsp;Interpretation</h2>
+<p>One additional variable that could influence flooded wetland area is soil type, which is a categorical variable. Wetlands with soils that drain slowly, such as clay-rich soils, can stay flooded longer and have larger flooded areas than wetlands with grainier/permeable soils that drain more quickly.</p>
+</section>
+</section>
+<section id="problem-2.-data-visualization" class="level1">
+<h1>Problem 2. Data visualization</h1>
+<p>Reed, D, R. Miller. 2025. SBC LTER: Reef: Kelp Forest Community Dynamics: Abundance and size of Giant Kelp (Macrocystis Pyrifera), ongoing since 2000 ver 30. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/c05388280c63f9effa0c71bf5908be1e" class="uri">https://doi.org/10.6073/pasta/c05388280c63f9effa0c71bf5908be1e</a>. Accessed 2026-03-11.</p>
+<section id="a.-cleaning-and-summarizing" class="level2">
+<h2 class="anchored" data-anchor-id="a.-cleaning-and-summarizing">a. Cleaning and summarizing</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>kelp_clean <span class="ot">&lt;-</span> kelp <span class="sc">|&gt;</span> <span class="co"># store kelp data in new object kelp_clean</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span> <span class="co"># clean column names so it only has lowercase and underscores</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(site <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IVEE"</span>, <span class="st">"NAPL"</span>, <span class="st">"CARP"</span>)) <span class="sc">|&gt;</span> <span class="co"># keeps only observations from Isla Vista, Naples, and Carpinteria</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(date <span class="sc">==</span> <span class="st">"2000-09-22"</span> <span class="sc">&amp;</span> transect <span class="sc">==</span> <span class="st">"6"</span> <span class="sc">&amp;</span> quad <span class="sc">==</span> <span class="st">"40"</span>)) <span class="sc">|&gt;</span> <span class="co"># removes the single unwanted observation from transect 6, quad 40, on 2000-09-22</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">site_name =</span> <span class="fu">case_when</span>( <span class="co"># creates a new descriptive site_name variable from the site codes</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">==</span> <span class="st">"NAPL"</span> <span class="sc">~</span> <span class="st">"Naples"</span>, <span class="co"># mutate site name from NAPL to Naples</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">==</span> <span class="st">"IVEE"</span> <span class="sc">~</span> <span class="st">"Isla Vista"</span>, <span class="co"># mutate site name from IVEE to Isla Vista</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    site <span class="sc">==</span> <span class="st">"CARP"</span> <span class="sc">~</span> <span class="st">"Carpinteria"</span> <span class="co"># mutate site name from CARP to Carpinteria</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">site_name =</span> <span class="fu">as_factor</span>(site_name), <span class="co"># converts site_name to a factor</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">site_name =</span> <span class="fu">fct_relevel</span>(site_name,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Naples"</span>, <span class="st">"Isla Vista"</span>, <span class="st">"Carpinteria"</span>)) <span class="sc">|&gt;</span> <span class="co"># set the order of levels manually</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(site_name, year) <span class="sc">|&gt;</span> <span class="co"># groups the data by site and year so summary statistics are calculated within each group</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_fronds =</span> <span class="fu">mean</span>(fronds)) <span class="sc">|&gt;</span> <span class="co"># calculates mean frond count for each site-year group</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="co"># removes grouping so the result is a regular data frame</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>kelp_clean <span class="sc">|&gt;</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">5</span>) <span class="co"># slice 5 samples from the kelp_clean data frame </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  site_name    year mean_fronds
+  &lt;fct&gt;       &lt;dbl&gt;       &lt;dbl&gt;
+1 Carpinteria  2018        4.21
+2 Isla Vista   2013        9.36
+3 Carpinteria  2016        4.97
+4 Naples       2007       17.2 
+5 Isla Vista   2008       39.4 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(kelp_clean) <span class="co"># display structure of kelp_clean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [77 × 3] (S3: tbl_df/tbl/data.frame)
+ $ site_name  : Factor w/ 3 levels "Naples","Isla Vista",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ year       : num [1:77] 2000 2001 2002 2003 2004 ...
+ $ mean_fronds: num [1:77] 1.8947 0.0606 3.0111 9.2596 7.8141 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="b.-understanding-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="b.-understanding-the-data">b. Understanding the data</h2>
+<p>That observation was filtered out because the notes on the dataset table csv itself says there was a missing data sheet for 2000-09-22, transect 6 (a fixed 40 m sampling line in the kelp forest), quad 40 (one specific smaller sampling section within that transect where kelp were counted), so the fronds value there is -99999. That value does not represent a real number of fronds; it is an NA/missing-data code used when data were not collected or the datasheet was lost, as described in the Santa Barbara Coastal LTER data, Methods and Protocols section.</p>
+</section>
+<section id="c.-visualize-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="c.-visualize-the-data">c.&nbsp;Visualize the data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add_google</span>(<span class="st">"lato"</span>) <span class="co"># downloads/imports the Google font "Lato" </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>() <span class="co"># render text in plots using showtext, so the custom font appears correctly</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot base layer call</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kelp_clean, <span class="co"># select kelp_clean data frame</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="co"># use year column as x-axis</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> mean_fronds, <span class="co"># use mean_fronds column as y-axis</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> site_name)) <span class="sc">+</span> <span class="co"># color based on sites </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># first layer: points</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="co"># second layer: lines connecting points</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># labels</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sites vary in mean kelp fronds per year"</span>, <span class="co"># label title</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="co"># label x-axis title</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Mean kelp fronds per year"</span> <span class="co"># label y-axis title</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>( <span class="co"># manually change colors</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Site"</span>, <span class="co"># label legend as Site</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Naples"</span> <span class="ot">=</span> <span class="st">"#2A9D9A"</span>, <span class="co"># assign light blue color to Naples plot</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Isla Vista"</span> <span class="ot">=</span> <span class="st">"#C9A294"</span>, <span class="co"># assign peach color to Naples plot</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Carpinteria"</span> <span class="ot">=</span> <span class="st">"#7E9190"</span>)) <span class="sc">+</span> <span class="co"># assign gray color to Naples plot</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span><span class="co"># choose minimal ggplot theme</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># theme function call</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>), <span class="co"># adjust title position and size</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(), <span class="co"># eliminate plot borders</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"lato"</span>, <span class="at">color =</span> <span class="st">"black"</span>), <span class="co"># customize text font and color</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>), <span class="co"># change axis font size</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>), <span class="co"># change axis text size</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>), <span class="co"># change legend title font size</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>), <span class="co"># change legend text size  </span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray90"</span>), <span class="co"># change gridline colors</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray90"</span>), <span class="co"># change gridline colors</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray90"</span>), <span class="co"># change gridline colors</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"gray90"</span>)) <span class="co"># change gridline colors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final_files/figure-html/mean%20kelp%20size%20vs%20sites-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="d.-interpretation-1" class="level2">
+<h2 class="anchored" data-anchor-id="d.-interpretation-1">d.&nbsp;Interpretation</h2>
+<p><strong>Isla Vista</strong> had the most variable mean kelp fronds per year because its line and points shows the largest fluctuations over time, ranging from around 5 to 40 fronds per year. The steep rises and drops in the Isla Vista series indicate much greater year-to-year variation than the other 2 sites.</p>
+<p><strong>Carpinteria</strong> had the least variable mean kelp fronds per year because its line stays relatively flatter and with a narrower range of y-values than other 2 sites, consistently around 3 to 13 fronds per year with 1 outlier point. Carpinteria shows smaller changes from year to year, with only 1 year that extends beyond 15 fronds compared to other 2 sites with multiple years over 15 fronds per year.</p>
+</section>
+</section>
+<section id="problem-3.-data-analysis" class="level1">
+<h1>Problem 3. Data Analysis</h1>
+<section id="a.-response-variable" class="level2">
+<h2 class="anchored" data-anchor-id="a.-response-variable">a. Response variable</h2>
+<p>In this study, 1 represents a site that was used as a Mountain Plover nest site, and 0 represents an unused available site within a prairie dog colony. The Methods states that the nest-site selection analysis used a “use vs.&nbsp;non-use framework,” where used sites were actual nests and unused sites were randomly selected points within colonies where no plovers or nests were detected that year.</p>
+</section>
+<section id="b.-purpose-of-study" class="level2">
+<h2 class="anchored" data-anchor-id="b.-purpose-of-study">b. Purpose of study</h2>
+<p><strong>Visual obstruction:</strong> Visual obstruction is a continuous variable, measured with Robel pole readings at the nest and nearby points, so it represents how much vegetation height and density block visibility. As visual obstruction increases, the probability of Mountain Plover nest site use would likely decrease because the paper describes plovers select nest sites with low vegetation height. Relation of low vegetation height and Mountain Plover nesting was described in Introduction, paragraph 2, and. how/what value was measured for visual obstruction was found in the Methods section, Adult Mountain Plover Density, paragraph 3 where visual collection measurements were described.</p>
+<p><strong>Distance to prairie dog colony edge</strong>: Distance to prairie dog colony edge is also a continuous variable, because it measures how far a site is from the edge of a prairie dog colony. As distance from the prairie dog colony edge increases, the probability of Mountain Plover nesting would likely decrease because the prairie dog activity creates short vegetation and open ground that Mountain Plovers favor. The relation between Mountain Plover and prairie dogs is described in Abstract, and the variable is described in Methods, Nest-Site Selection, Table 1, where one of the predictor variable used in the nest-site selection model is described as “Distance to colony edge”.</p>
+</section>
+<section id="c.-table-of-models" class="level2">
+<h2 class="anchored" data-anchor-id="c.-table-of-models">c.&nbsp;Table of models</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model number</th>
+<th style="text-align: center;">Visual Obstruction</th>
+<th style="text-align: center;">Distance to Prairie Dog Colony</th>
+<th style="text-align: center;">Model Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">no predictors (null model)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">all predictors (full model): Visual Obstruction + Distance to Prairie Dog Colony</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Visual Obstruction</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;">Distance to Prairie Dog Colony</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="d.-run-the-models" class="level2">
+<h2 class="anchored" data-anchor-id="d.-run-the-models">d.&nbsp;Run the models</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mopl_clean <span class="ot">&lt;-</span> mopl <span class="sc">|&gt;</span> <span class="co"># store mopl data frame in new object called mopl_clean</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">|&gt;</span> <span class="co"># clean column names so it only has lowercase letters and underscores</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">used_bin =</span> <span class="fu">if_else</span>(id <span class="sc">==</span> <span class="st">"used"</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="sc">|&gt;</span> <span class="co"># create used_bin column and assign 1 to used nests, and 0 to others</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(used_bin, edgedist, vo_nest) <span class="co"># select columns to save in the new object mopl_clean</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># model 0: null model</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>model0 <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># generalized linear model</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  used_bin <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># no predictors </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> mopl_clean, <span class="co"># use mopl_clean data frame</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"binomial"</span> <span class="co"># binomial response variable</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># model 1: saturated model</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># generalized linear model</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  used_bin <span class="sc">~</span> vo_nest <span class="sc">+</span> edgedist, <span class="co"># all predictors</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> mopl_clean, <span class="co"># use mopl_clean data frame</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"binomial"</span> <span class="co"># binomial response variable</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># model 2: visual obstruction only</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># generalized linear model</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  used_bin <span class="sc">~</span> vo_nest, <span class="co"># visual obstruction predictor only</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> mopl_clean, <span class="co"># use mopl_clean data frame</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"binomial"</span> <span class="co"># binomial response variable</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># model 3: distance to prairie dog colony only</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">glm</span>( <span class="co"># generalized linear model</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  used_bin <span class="sc">~</span> edgedist, <span class="co"># distance from prairie dog colony predictor only </span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> mopl_clean, <span class="co"># use mopl_clean data frame</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">family =</span> <span class="st">"binomial"</span> <span class="co"># binomial response variable</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="e.-select-the-best-model" class="level2">
+<h2 class="anchored" data-anchor-id="e.-select-the-best-model">e. Select the best model</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AICc</span>(model0, model1, model2, model3) <span class="sc">|&gt;</span> <span class="co">#Akaike's Informatio Criterion code for all models </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(AICc) <span class="co"># arrange it in a way that lowest score comes on top</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       df     AICc
+model2  2 331.8130
+model1  3 333.8293
+model0  1 384.6318
+model3  2 386.1351</code></pre>
+</div>
+</div>
+<p>The best model as determined by Akaike’s Information Criterion (AIC) included visual obstruction at the nest (vo_nest) as a predictor variable of Mountain Plover nest site use (used__bin).</p>
+</section>
+<section id="f.-check-the-diagnostics" class="level2">
+<h2 class="anchored" data-anchor-id="f.-check-the-diagnostics">f.&nbsp;Check the diagnostics</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sim_res <span class="ot">&lt;-</span> DHARMa<span class="sc">::</span><span class="fu">simulateResiduals</span>(<span class="at">fittedModel =</span> model2) <span class="co"># store diagnostic data of best model determined by AIC in sim_res</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sim_res) <span class="co"># plot the residuals</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final_files/figure-html/diagnostics-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="g.-visualize-the-model-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="g.-visualize-the-model-predictions">g. Visualize the model predictions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create model predictions across the observed range of visual obstruction</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mod_preds <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  model2,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">terms =</span> <span class="st">"vo_nest"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot underlying data and model predictions with 95% confidence intervals</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mopl_clean, <span class="co"># start with mopl_clean data frame</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> vo_nest, <span class="co"># use vo_nest column as x-axis</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> used_bin)) <span class="sc">+</span> <span class="co"># use used_bin column as y-axis</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># show observed data</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># first layer: individual observations as points </span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fl">2.5</span>, <span class="co"># change size of the points</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="co"># change opacity of points</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"darkorange"</span> <span class="co"># change color of points to darkorange</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>( <span class="co"># second layer: 95% confidence interval ribbon</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> mod_preds, <span class="co"># use mod_preds data frame</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>( </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> x, <span class="co"># set x-axis</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> predicted, <span class="co"># set y-axis</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymin =</span> conf.low, <span class="co"># lower bound of the ribbon</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymax =</span> conf.high <span class="co"># upper bound of the ribbon</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="co"># change opacity</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span> <span class="co"># change color of ribbon to skyblue</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="co"># third layer: add predicted probability line</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> mod_preds, <span class="co"># use mod_preds data frame</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="co"># set x-axis</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> predicted), <span class="co"># set y-axis</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">1.2</span>, <span class="co"># make line width thicker</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"navy"</span> <span class="co"># change color of the line to navy</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># make y-axis go from 0 to 1 </span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span> <span class="co"># put tick marks only at 0 and 1 </span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Visual obstruction at nest (cm)"</span>, <span class="co"># label x-axis</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Probability of Mountain Plover nest site use"</span> <span class="co"># label y-axis</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="co"># choose theme without gridlines</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Final_files/figure-html/visualization%20of%20model%20prediction-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
