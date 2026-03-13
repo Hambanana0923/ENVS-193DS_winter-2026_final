@@ -277,3 +277,18 @@ ggplot(mopl_clean, # start with mopl_clean data frame
 **Figure 1. Predicted probability of Mountain Plover nest site use as a function of visual obstruction at the nest.**
 
 Orange open circles represent observed values for used and available nest sites, the navy line represents predicted probabilities from the selected logistic regression model, and the blue shaded ribbon represents 95% confidence intervals around the model predictions. Data source: Duchardt, Courtney; Beck, Jeffrey; Augustine, David (2020). *Data from: Mountain Plover habitat selection and nest survival in relation to weather variability and spatial attributes of Black-tailed Prairie Dog disturbance* \[Dataset\]. Dryad. <https://doi.org/10.5061/dryad.ttdz08kt7>.
+
+## i. Calculate model predictions
+
+```{r}
+#| label: calculate model predictions
+
+ggpredict( # calculate predicted probability of Mountain Plover nest site occupancy
+  model2, # select model2 
+  terms = "vo_nest [0]" # when visual obstruction at the nest is 0 cm
+)
+```
+
+## j. Interpret your results 
+
+Mountain Plover nest site occupancy was highest when visual obstruction was low. At 0 cm visual obstruction, the predicted probability of nest site occupancy was 0.73 (95% CI: 0.65–0.80), indicating that plovers strongly prefer open nesting areas. As shown in Figure 1, the probability of nest site use decreases as visual obstruction increases, suggesting that taller or denser vegetation reduces habitat suitability. This pattern likely occurs because Mountain Plovers nest in open habitats with short, sparse vegetation and large amounts of bare ground, which allows them to detect predators and blend into the surrounding soil. Prairie dogs help create these open habitat conditions by clipping vegetation and disturbing soil, making prairie dog colonies especially suitable nesting habitat for Mountain Plovers.
