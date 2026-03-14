@@ -26,9 +26,11 @@ library(showtext) # read in showtext package
 library(DHARMa) # read in DHARMa package
 library(MuMIn) # read in MuMIn package
 library(ggeffects) # read in ggeffects package
+library(effsize) # read in effsize 
 
 kelp <- read_csv(here("data", "kelp.csv")) # save giant kelp frond data in new object called kelp
 mopl <- read_csv(here("data", "mopl_2019.csv")) # store Mountain Plover data in new object molp
+mydata <- read.csv(here("data", "my_data.csv")) # store personal data in new object mydata
 ```
 
 # Problem 1. Research writing
@@ -317,4 +319,56 @@ Mountain Plover nest site occupancy was highest when visual obstruction was low.
 
 One analysis I could use is Student's or Welch's two-sample t-test comparing total screen time between school days and non-school days.
 
-This analysis is appropriate because my question asks whether average screen time differs depending on the type of day. My response variable is total screen time, measured in minutes, which is a continuous variable. My predictor variable is day type, which has two categories of school day and non-school day, which is binary categorical variable. Welch's two-sample t-test is used to test for this kind of situation: testing whether the mean of a continuous response variable differs between two independent groups, depending on whether the variance is equal or not for 2 groups. If the screen time data does not meet assumptions (heavily skewed, contain strong outliers, not approximately normally distributed), then I could instead use a Mann-Whitney U test. This test is appropriate because it does not require the response variable to follow a normal distribution and can still be used to compare two independent groups.
+This analysis is appropriate because my question asks whether average screen time differs depending on the type of day. My response variable is total screen time, measured in minutes, which is a continuous variable. My predictor variable is day type, which has two categories of school day and non-school day, which is binary categorical variable. Student's/Welch's two-sample t-test is used to test for this kind of situation: testing whether the mean of a continuous response variable differs between two independent groups, depending on whether the variance is equal or not for 2 groups. If the screen time data does not meet assumptions (heavily skewed, contain strong outliers, not approximately normally distributed), then I could instead use a Mann-Whitney U test. This test is appropriate because it does not require the response variable to follow a normal distribution and can still be used to compare two independent groups.
+
+## c. **Check any assumptions and run your analysis**
+
+```{r}
+#| label: check assumption
+
+
+mydata_clean <- mydata |> # store mydata data frame in new object mydata_clean
+  clean_names() |> # clean column names to only have lowercase and underscores
+  select(day_type, screen_time_min) |> # select columns to only have day_type and screen_time_min
+  mutate(day_type = str_trim(day_type)) # fix string issues on excel sheet 
+
+
+ggplot(data = mydata_clean, # starting data frame
+       aes(sample = screen_time_min, # y-axis for a QQ plot
+           color = day_type)) + # coloring points by day type 
+  geom_qq_line(color = "blue") + # reference line in blue
+  geom_qq() + # actual points for the QQ plot
+  facet_wrap(~ day_type) + # creating two panels
+  theme(legend.position = "none") #taking out legend
+
+
+var_test <- var.test( # Function for F test and store result in var_test object
+  screen_time_min ~ day_type,  # formula: response variable ~ grouping variance
+  data = mydata_clean # mydata_clean data frame
+)
+
+print(var_test) # print variance test 
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| label: run the test 
+
+welch_test <- t.test(screen_time_min ~ day_type, # store t test result between screen_time_min and day_type in new object welch_test 
+                     data = mydata_clean, # use mydata_clean data frame 
+                     VAR = FALSE) # variance are not equal: Welch's t test 
+welch_test # print welch_test result 
+ 
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| label: effect size 
+
+cohen.d(screen_time_min ~ day_type,  # calculates Cohen's d for screen_time_min across the groups in day_type
+        data = mydata_clean, # use mydata_clean data frame 
+        pooled = FALSE) # uses separate group standard deviations
+
+```
