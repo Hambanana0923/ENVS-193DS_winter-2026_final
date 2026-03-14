@@ -312,3 +312,9 @@ Mountain Plover nest site occupancy was highest when visual obstruction was low.
 -   What kinds of feedback did you get during week 9 in workshop or from the instructors? How did you implement or try those suggestions? If you tried and kept those suggestions, explain how and why; if not, explain why not.
 
     My peers told me that I should incorporate colors in my affective visualiation because I initially started with just pencil, which was hard to show the "brightness" aspect with pencil drawings. To incorporate their ideas, I deviated to using Canva because I do not own many colored pen/pencils to color my intended depiction of the results. I listened to their opinions because I'm not a very creative person and I thought that it was a very valid point, and it was me who asked during the presentation in workshop whether or not I should add colors.
+
+## b. Designing an analysis 
+
+One analysis I could use is Student's or Welch's two-sample t-test comparing total screen time between school days and non-school days.
+
+This analysis is appropriate because my question asks whether average screen time differs depending on the type of day. My response variable is total screen time, measured in minutes, which is a continuous variable. My predictor variable is day type, which has two categories of school day and non-school day, which is binary categorical variable. Welch's two-sample t-test is used to test for this kind of situation: testing whether the mean of a continuous response variable differs between two independent groups, depending on whether the variance is equal or not for 2 groups. If the screen time data does not meet assumptions (heavily skewed, contain strong outliers, not approximately normally distributed), then I could instead use a Mann-Whitney U test. This test is appropriate because it does not require the response variable to follow a normal distribution and can still be used to compare two independent groups.
