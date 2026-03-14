@@ -155,7 +155,7 @@ In this study, 1 represents a site that was used as a Mountain Plover nest site,
 ## c. Table of models
 
 | Model number | Visual Obstruction | Distance to Prairie Dog Colony | Model Description |
-|-----------------|:---------------:|:---------------:|:--------------------:|
+|-----------------|:---------------:|:---------------:|:-------------------:|
 | 0 |  |  | no predictors (null model) |
 | 1 | X | X | all predictors (full model): Visual Obstruction + Distance to Prairie Dog Colony |
 | 2 | X |  | Visual Obstruction |
@@ -289,6 +289,26 @@ ggpredict( # calculate predicted probability of Mountain Plover nest site occupa
 )
 ```
 
-## j. Interpret your results 
+## j. Interpret your results
 
 Mountain Plover nest site occupancy was highest when visual obstruction was low. At 0 cm visual obstruction, the predicted probability of nest site occupancy was 0.73 (95% CI: 0.65–0.80), indicating that plovers strongly prefer open nesting areas. As shown in Figure 1, the probability of nest site use decreases as visual obstruction increases, suggesting that taller or denser vegetation reduces habitat suitability. This pattern likely occurs because Mountain Plovers nest in open habitats with short, sparse vegetation and large amounts of bare ground, which allows them to detect predators and blend into the surrounding soil. Prairie dogs help create these open habitat conditions by clipping vegetation and disturbing soil, making prairie dog colonies especially suitable nesting habitat for Mountain Plovers.
+
+# Problem 4. Affective and exploratory visualizations
+
+## a. Comparing visualizations 
+
+-   How are the visualizations different from each other in the way you have represented your data?
+
+    My affective visualization used background, brightness, and illustrations of hobbies/people/etc. to represent individual observations, which is completely different from strict box and whisker plot with numerical axis and labels in my initial exploratory visualization. My affective visualization attempted to evoke emotions and aesthetically communicate the result instead of numerical, logos approach with exploratory visualization.
+
+-   What similarities do you see between all your visualizations?
+
+    I incorporated the median line from box and whisker plot in my exploratory visualization to my affective visualization, which was similar. I also used illustration of phone (rectangular) in my affective visualization as a medium of showing the boxplot, which was similar to the exploratory visualization.
+
+-   What patterns (e.g. differences in means/counts/proportions/medians, trends through time, relationships between variables) do you see in each visualization? Are these different between visualizations? If so, why? If not, why not?
+
+    Higher median screen time for school days and lower screen time for non-school days are depicted and are same in both of my visualizations. They are both illustrated based on the same data/results, and individual observations between school and non-school days are also delineated similiarily as well. The medium of communication is different, but both visualizations show the same pattern/trend from personal data collection
+
+-   What kinds of feedback did you get during week 9 in workshop or from the instructors? How did you implement or try those suggestions? If you tried and kept those suggestions, explain how and why; if not, explain why not.
+
+    My peers told me that I should incorporate colors in my affective visualiation because I initially started with just pencil, which was hard to show the "brightness" aspect with pencil drawings. To incorporate their ideas, I deviated to using Canva because I do not own many colored pen/pencils to color my intended depiction of the results. I listened to their opinions because I'm not a very creative person and I thought that it was a very valid point, and it was me who asked during the presentation in workshop whether or not I should add colors.
